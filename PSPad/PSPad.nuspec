@@ -22,7 +22,7 @@ useful for people who:
 commercial and government purposes too
     </description>
     <docsUrl>http://www.pspad.com/en/helpfiles.htm</docsUrl>
-    <iconUrl>icon.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/turboBasic/au-packages/master/PSPad/icon.png</iconUrl>
     <licenseUrl>http://www.pspad.com/en/licence.php</licenseUrl>
     <projectUrl>http://www.pspad.com/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
