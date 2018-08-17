@@ -29,10 +29,6 @@ function global:au_GetLatest {
         Where-Object href -match $regex |
         Select-Object -ExpandProperty href -First 1
 
-
-    #$header = $download_page.ParsedHtml.getElementsByTagName('h2') | 
-    #    Where { $_.InnerHTML -match 'PSPad\s+-\s+current\s+version\s+(\d+\.\d+\.\d+)\s+\((\d+)\)' }
-
     $html = New-Object -ComObject "HTMLFile"
     $html.write( 
         [System.Text.Encoding]::Unicode.GetBytes( $downloadPage.Content )
