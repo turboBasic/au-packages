@@ -29,11 +29,11 @@ Features
 * New for 0.9: Works with plugins that are installed multiple times - update them all or individually
     </description>
     <docsUrl>https://rawgit.com/bruderstein/nppPluginManager/master/doc/index.html</docsUrl>
-    <iconUrl>https://raw.githubusercontent.com/turboBasic/au-packages/032b22defa6ff47eb1bcb58b0f03f70f84423d00/notepadplusplus-nppPluginManager/icon.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/turboBasic/au-packages/master/notepadplusplus-nppPluginManager/icon.png</iconUrl>
     <licenseUrl>https://rawgit.com/bruderstein/nppPluginManager/master/doc/index.htm</licenseUrl>
-    <projectUrl>https://github.com/majkinetor/au#creating-the-package-updater-script</projectUrl>
+    <projectUrl>https://bruderste.in/npp/pm</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <packageSourceUrl>https://github.com/majkinetor/au/releases</packageSourceUrl>
+    <packageSourceUrl>https://github.com/turboBasic/au-packages</packageSourceUrl>
     <projectSourceUrl></projectSourceUrl>
     <releaseNotes>https://bruderste.in/npp/pm/#changes</releaseNotes>
     <summary>npp Plugin Manager is plugin which allows you to install, update and remove plugins from Notepad++</summary>
