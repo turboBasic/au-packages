@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>notepadplusplus-npppluginmanager</id>
+    <title>nppPluginManager</title>
+    <version>1.14.1</version>
+    <authors>Dave Brotherstone</authors>
+    <owners>Mao</owners>
+    <copyright>Copyright (C) 2011-2018 Dave Brotherstone</copyright>
+    <description>
+[Plugin Manager](https://github.com/notepad-plus-plus/notepad-plus-plus) that allows you to install, 
+update and remove plugins from Notepad++. 
+A centrally hosted XML file holds the list of plugins, that the plugin manager downloads and processes against the list of installed plugins.     
+
+Features
+* Install, Update and Remove all existing plugins
+* Notify when an installed plugin has an update available, and allow the user to update directly
+* Calculate dependencies between plugins, any plugin can depend on another plugin, which will be installed automatically if the user installs the initial plugin
+* Install all supplemental files as well as the plugin file itself (e.g. config, doc, extra libraries)
+* Automatic installation of the correct version (ANSI/Unicode) for your Notepad++
+* Validation of DLLs copied, against a central list of valid files. This slightly mitigates the risk of automatically downloading updates.
+* Only plugins that are compatible with your Notepad++ are shown
+* Plugins can be put into categories - a suggestion was made of "Official, Common and Others". Currently all plugins are in the "Others" category, as I think there needs to be some agreement as to what determines an "Official" plugin and which plugins are "Common".
+* Plugin Manager is able to update itself, and will notify the user when an update is available
+* Proxies are supported, just change the setting
+* Updates can be ignored, and the user will not be alerted to that update again, until a further new version of that plugin is released.
+* The local plugin list file is only downloaded when something has changed - the MD5sum of the file is compared to the server's version, and if it is different, then a new copy is downloaded.
+* New for 0.9: Works with plugins that are installed multiple times - update them all or individually
+    </description>
+    <docsUrl>https://rawgit.com/bruderstein/nppPluginManager/master/doc/index.html</docsUrl>
+    <iconUrl>https://cdn.rawgit.com/turboBasic/au_packages/master/notepadplusplus-nppPluginManager/icon.png</iconUrl>
+    <licenseUrl>https://rawgit.com/bruderstein/nppPluginManager/master/doc/index.htm</licenseUrl>
+    <projectUrl>https://github.com/majkinetor/au#creating-the-package-updater-script</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <packageSourceUrl>https://github.com/majkinetor/au/releases</packageSourceUrl>
+    <projectSourceUrl></projectSourceUrl>
+    <releaseNotes>https://bruderste.in/npp/pm/#changes</releaseNotes>
+    <summary>npp Plugin Manager is plugin which allows you to install, update and remove plugins from Notepad++</summary>
+    <tags>text editor windows freeware development</tags>
+    <dependencies>
+        <dependency id="notepadplusplus.install" version="7.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
