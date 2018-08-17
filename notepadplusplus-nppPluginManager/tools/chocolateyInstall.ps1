@@ -5,7 +5,8 @@ $ErrorActionPreference = 'Stop'
 $toolsPath = Split-Path -Parent $MyInvocation.MyCommand.Definition
 $NotepadPlusPlusApplicationPath = "${ENV:ProgramFiles}/Notepad++"
 $NotepadPlusPlusProcessName = 'Notepad++'
-$AssetsToCopy = 'updater', 'plugins'
+$assetsToCopy = 'updater', 'plugins'
+$ignoreShims = 'updater/gpup.exe'
 
 
 
@@ -21,11 +22,21 @@ Install-ChocolateyZipPackage @packageArgs
 
 
 
+# Generate .ignore files to avoid creating shims
+foreach ($file in $ignoreShims) {
+  New-Item `
+      -Path (Join-Path -Path $toolsPath -ChildPath "${file}.ignore") `
+      -ItemType File -Force -Verbose:$VerbosePreference | 
+      Out-Null
+}
+
+
+
 if ( Test-Path -Path $NotepadPlusPlusApplicationPath ) 
 {
     Get-Process -Name $NotepadPlusPlusProcessName -ErrorAction SilentlyContinue | ForEach-Object {
         Write-Warning "Closing running instances of Notepad++, please save your files"
         $_.CloseMainWindow() | Out-Null 
     }
-    Copy-Item -Path $toolsPath/* -Include $AssetsToCopy -Destination $NotepadPlusPlusApplicationPath -Force -Recurse -Confirm:$False -Verbose:$VerbosePreference
+    Copy-Item -Path $toolsPath/* -Include $assetsToCopy -Destination $NotepadPlusPlusApplicationPath -Force -Recurse -Confirm:$False -Verbose:$VerbosePreference
 }
