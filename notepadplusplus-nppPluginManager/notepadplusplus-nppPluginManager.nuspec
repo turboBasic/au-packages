@@ -33,8 +33,8 @@ Features
     <licenseUrl>https://rawgit.com/bruderstein/nppPluginManager/master/doc/index.htm</licenseUrl>
     <projectUrl>https://bruderste.in/npp/pm</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <packageSourceUrl>https://github.com/turboBasic/au-packages</packageSourceUrl>
-    <projectSourceUrl></projectSourceUrl>
+    <packageSourceUrl>https://github.com/turboBasic/au-packages/notepadplusplus-nppPluginManager</packageSourceUrl>
+    <projectSourceUrl>https://github.com/bruderstein/nppPluginManager</projectSourceUrl>
     <releaseNotes>https://bruderste.in/npp/pm/#changes</releaseNotes>
     <summary>npp Plugin Manager is plugin which allows you to install, update and remove plugins from Notepad++</summary>
     <tags>text editor windows freeware development</tags>
