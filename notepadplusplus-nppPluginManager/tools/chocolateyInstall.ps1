@@ -24,10 +24,8 @@ Install-ChocolateyZipPackage @packageArgs
 
 # Generate .ignore files to avoid creating shims
 foreach ($file in $ignoreShims) {
-  New-Item `
-      -Path (Join-Path -Path $toolsPath -ChildPath "${file}.ignore") `
-      -ItemType File -Force -Verbose:$VerbosePreference | 
-      Out-Null
+    New-Item -Path (Join-Path -Path $toolsPath -ChildPath "${file}.ignore") -ItemType File -Force -Verbose:$VerbosePreference | 
+        Out-Null
 }
 
 
@@ -39,5 +37,8 @@ if ( Test-Path -Path $NotepadPlusPlusApplicationPath )
         $_.CloseMainWindow() | Out-Null 
     }
     Start-Sleep -Milliseconds 500
+    if ($VerbosePreference) {
+        Get-Process -Name $NotepadPlusPlusProcessName -ErrorAction SilentlyContinue 
+    }
     Copy-Item -Path $toolsPath/* -Include $assetsToCopy -Destination $NotepadPlusPlusApplicationPath -Force -Recurse -Confirm:$False -Verbose:$VerbosePreference
 }
