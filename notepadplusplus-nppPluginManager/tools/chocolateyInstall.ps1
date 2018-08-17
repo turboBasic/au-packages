@@ -3,6 +3,11 @@
 $ErrorActionPreference = 'Stop'
 
 $toolsPath = Split-Path -Parent $MyInvocation.MyCommand.Definition
+$NotepadPlusPlusApplicationPath = "${ENV:ProgramFiles}/Notepad++"
+$NotepadPlusPlusProcessName = 'Notepad++'
+$AssetsToCopy = 'updater', 'plugins'
+
+
 
 $packageArgs = @{
   PackageName            = 'notepadplusplus-nppPluginManager'
@@ -14,8 +19,13 @@ $packageArgs = @{
 }
 Install-ChocolateyZipPackage @packageArgs
 
-if ( Test-Path -Path ${ENV:ProgramFiles}/Notepad++ ) 
+
+
+if ( Test-Path -Path $NotepadPlusPlusApplicationPath ) 
 {
-    Copy-Item -Path $toolsPath/updater/gpup.exe -Destination ${ENV:ProgramFiles}/Notepad++/updater -Force
-    Copy-Item -Path $toolsPath/plugins/PluginManager.dll -Destination ${ENV:ProgramFiles}/Notepad++/plugins -Force
+    Get-Process -Name $NotepadPlusPlusProcessName -ErrorAction SilentlyContinue | ForEach-Object {
+        Write-Warning "Closing running instances of Notepad++, please save your files"
+        $_.CloseMainWindow() | Out-Null 
+    }
+    Copy-Item -Path $toolsPath/* -Include $AssetsToCopy -Destination $NotepadPlusPlusApplicationPath -Force -Recurse -Confirm:$False -Verbose:$VerbosePreference
 }
