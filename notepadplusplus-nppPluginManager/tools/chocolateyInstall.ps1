@@ -38,5 +38,6 @@ if ( Test-Path -Path $NotepadPlusPlusApplicationPath )
         Write-Warning "Closing running instances of Notepad++, please save your files"
         $_.CloseMainWindow() | Out-Null 
     }
+    Start-Sleep -Milliseconds 500
     Copy-Item -Path $toolsPath/* -Include $assetsToCopy -Destination $NotepadPlusPlusApplicationPath -Force -Recurse -Confirm:$False -Verbose:$VerbosePreference
 }
