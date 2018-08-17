@@ -29,7 +29,7 @@ Features
 * New for 0.9: Works with plugins that are installed multiple times - update them all or individually
     </description>
     <docsUrl>https://rawgit.com/bruderstein/nppPluginManager/master/doc/index.html</docsUrl>
-    <iconUrl>https://cdn.rawgit.com/turboBasic/au-packages/master/notepadplusplus-nppPluginManager/icon.png</iconUrl>
+    <iconUrl>https://rawgit.com/turboBasic/au-packages/master/notepadplusplus-nppPluginManager/icon.png</iconUrl>
     <licenseUrl>https://rawgit.com/bruderstein/nppPluginManager/master/doc/index.htm</licenseUrl>
     <projectUrl>https://bruderste.in/npp/pm</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
