@@ -29,7 +29,6 @@ Features
     </description>
     <docsUrl>https://rawgit.com/bruderstein/nppPluginManager/master/doc/index.html</docsUrl>
     <iconUrl>https://rawgit.com/turboBasic/au-packages/master/notepadplusplus-nppPluginManager/icon.png</iconUrl>
-    <licenseUrl>https://rawgit.com/bruderstein/nppPluginManager/master/doc/index.htm</licenseUrl>
     <projectUrl>https://bruderste.in/npp/pm</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <packageSourceUrl>https://github.com/turboBasic/au-packages/tree/master/notepadplusplus-nppPluginManager</packageSourceUrl>

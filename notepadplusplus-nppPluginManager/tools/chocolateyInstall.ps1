@@ -3,7 +3,11 @@
 $ErrorActionPreference = 'Stop'
 
 $toolsPath = Split-Path -Parent $MyInvocation.MyCommand.Definition
+
+# @TODO: query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Notepad++ to find installation path 
+# @TODO: ? decide if portable version (Notepad++.portable) should be supported
 $NotepadPlusPlusApplicationPath = "${ENV:ProgramFiles}/Notepad++"
+
 $NotepadPlusPlusProcessName = 'Notepad++'
 $assetsToCopy = 'updater', 'plugins'
 $ignoreShims = 'updater/gpup.exe'
@@ -41,4 +45,7 @@ if ( Test-Path -Path $NotepadPlusPlusApplicationPath )
         Get-Process -Name $NotepadPlusPlusProcessName -ErrorAction SilentlyContinue 
     }
     Copy-Item -Path $toolsPath/* -Include $assetsToCopy -Destination $NotepadPlusPlusApplicationPath -Force -Recurse -Confirm:$False -Verbose:$VerbosePreference
+} 
+else {
+    throw "Cannot find installation of Notepad++ 64-bit. Only 64-bit build is supported"
 }
