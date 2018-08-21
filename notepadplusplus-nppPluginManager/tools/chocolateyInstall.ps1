@@ -6,7 +6,19 @@ $toolsPath = Split-Path -Parent $MyInvocation.MyCommand.Definition
 
 # @TODO: query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Notepad++ to find installation path 
 # @TODO: ? decide if portable version (Notepad++.portable) should be supported
-$NotepadPlusPlusApplicationPath = "${ENV:ProgramFiles}/Notepad++"
+
+$registryInstallationPath = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Notepad++"
+$portableInstallationPath = "${env:AllUsersProfile}\chocolatey\lib\notepadplusplus.commandline\tools"
+if (Test-Path $registryInstallationPath)
+{
+    $NotepadPlusPlusApplicationPath = Split-Path -Parent -Path (
+        Get-ItemProperty -Path $registryInstallationPath
+    ).DisplayIcon
+}
+elseif (Test-Path $portableInstallationPath)
+{
+    $NotepadPlusPlusApplicationPath = $portableInstallationPath
+}
 
 $NotepadPlusPlusProcessName = 'Notepad++'
 $assetsToCopy = 'updater', 'plugins'
